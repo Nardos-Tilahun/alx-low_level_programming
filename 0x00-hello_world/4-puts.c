@@ -1,8 +1,8 @@
 #include<stdio.h>
 /**
- *This is to write string using puts
+ *main - This is to write string using puts
  *
- * this is a comment
+ *Return : zero 
  */
 int main(void)
 {
