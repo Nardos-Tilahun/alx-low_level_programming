@@ -1,8 +1,8 @@
 #include<stdio.h>
 /**
- *main - This is to write string using puts
+ *main - its entry point where the function begin preprocessing
  *
- *Return : zero 
+ *Return : zero it will always appear when finish the function
  */
 int main(void)
 {
