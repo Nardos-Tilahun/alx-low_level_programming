@@ -2,7 +2,7 @@
 /**
  *main - its entry point where the function begin preprocessing
  *
- *Return : zero it will always appear when finish the function
+ *Return : 0 it will always appear when finish the function
  */
 int main(void)
 {
