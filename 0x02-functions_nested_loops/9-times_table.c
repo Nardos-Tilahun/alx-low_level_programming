@@ -1,29 +1,32 @@
 #include "main.h"
-
 /**
- *times_table - it is time table for 9
+ * times_table - Prints the 9 times table
  *
- *@i: it takes the arguement
- *
- *Return: void for response
+ * Return: no return
  */
-
 void times_table(void)
-{	
-	int i;
-	int j;
-	char m;
+{
+	int a, b, op;
 
-	for (i = 48; i <= 57; i++)
+	for (a = 0; a <= 9; a++)
 	{
-		for (j = 48; j <= 57; j++)	
+		_putchar(48);
+		for (b = 1; b <= 9; b++)
 		{
-			char m =int i * int j; 
-
-			_putchar(m);
+			op = a * b;
 			_putchar(44);
-			_putchar(32);	
+			_putchar(32);
+			if (op <= 9)
+			{
+				_putchar(32);
+				_putchar(op + 48);
+			}
+			else
+			{
+				_putchar((op / 10) + 48);
+				_putchar((op % 10) + 48);
+			}
 		}
-		_putchar(10);
+		_putchar('\n');
 	}
 }
