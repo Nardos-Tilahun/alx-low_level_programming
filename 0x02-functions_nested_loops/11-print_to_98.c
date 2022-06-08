@@ -8,8 +8,7 @@
  */
 void print_to_98(int n)
 {	
-	int m
-	int m = int(n - '0');
+	int m = n;
 
 	if (m > 98)
 	{
@@ -20,17 +19,17 @@ void print_to_98(int n)
 			_putchar(32);
 		}
 	}
-	else if (n < 98)
+	else if (m < 98)
 	{
-		for (; n < 98; n++)
+		for (; m < 98; m++)
 		{
-			_putchar(n);
+			_putchar((m) + 48);
                         _putchar(44);
                         _putchar(32);
 		}
 	}
 	else
 	{
-		_putchar(n);
+		_putchar(m);
 	}
 }
