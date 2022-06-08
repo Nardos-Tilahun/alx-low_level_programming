@@ -6,20 +6,19 @@
  *
  *Return: integer value
  */
-int _abs(int)
+int _abs(int a)
 {
-	int a;
 	int b;
 
 	if (a > 0 && a == 0)
 	{
 		b = a;
-		print('b');
+		_putchar('b');
 	}
 	else (a < 0)
 	{
 		b = a * -1;
-		putchar('b');
+		_putchar('b');
 
 	}
 	_putchar('\n');
