@@ -8,8 +8,9 @@
  *Return: void for response
  */
 
-void times_table(int i)
+void times_table(void)
 {	
+	int i;
 	int j;
 	int m;
 
