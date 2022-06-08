@@ -7,12 +7,15 @@
  *Return: 0
  */
 void print_to_98(int n)
-{
-	if (n > 98)
+{	
+	int m
+	int m = int(n - '0');
+
+	if (m > 98)
 	{
-		for (; n > 98; n--)
+		for (; m > 98; m--)
 		{
-			_putchar((n) + 48);
+			_putchar((m) + 48);
 			_putchar(44);
 			_putchar(32);
 		}
