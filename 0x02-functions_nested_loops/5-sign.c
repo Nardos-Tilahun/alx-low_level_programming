@@ -1,5 +1,5 @@
 #include "main.h"
-/*
+/**
  *print_sign - Determin if the input number
  *greater, equal or less than zero.
  *
