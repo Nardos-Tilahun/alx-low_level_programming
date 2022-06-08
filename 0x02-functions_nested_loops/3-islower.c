@@ -1,8 +1,6 @@
 #include "main.h"
 /**
- *_islower - lower case charaacter 
- *
- * 
+ *_islower - lower case character
  *
  * @c:The charater
  *
