@@ -1,11 +1,12 @@
 #include "main.h"
 /*
  *print_sign - it shows the sign of the number
- *greater less thean or equal
  *
- * @n: int number of character
  *
- *Return: 1 if positive, 0 if zero, -1 if negative
+ * @n: The input number of integer
+ *
+ *Return: 1 if positive, 0 if zero, 
+ *-1 if negative
  */
 int print_sign(int n)
 {
