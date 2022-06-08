@@ -1,6 +1,7 @@
 #include "main.h"
 /*
  *print_sign - it shows the input number.
+ *greater,equal or less than zero.
  *
  *@n: The input number of integer.
  *
