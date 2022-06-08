@@ -1,8 +1,12 @@
 #include "main.h"
 /**
- *_islower - lower case
+ *_islower - lower case charaacter 
  *
- *Return 0 or 1
+ * 
+ *
+ * @c:The charater
+ *
+ * Return 1 for lower. 0 for upper
  */
 int _islower(int c)
 {
