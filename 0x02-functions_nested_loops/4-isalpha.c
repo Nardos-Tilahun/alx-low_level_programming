@@ -1,13 +1,15 @@
 #include "main.h"
 
 /**
- *_isalpha - check its a letter
+ *_isalpha - show its a letter
+ *letter or another case its shows
+ * 0
  *
- *@c -> int character in ASCII table
+ * @c: -> iTnt character in ASCII table
  *
- *Return int 1 is letter 0 is not
+ *Return: int 1 is letter 0 is not
  */
-int _isalpha(int c) 
+int _isalpha(int c)
 {
 	if (c >= 65 && c <= 90)
 	{
