@@ -2,11 +2,10 @@
 /*
  *print_sign - it shows the sign of the number
  *
+ * @n: The input number of integer.
  *
- * @n: The input number of integer
- *
- *Return: 1 if positive, 0 if zero, 
- *-1 if negative
+ *Return: 1 is positive, 0 is zero. 
+ *-1 is negative.
  */
 int print_sign(int n)
 {
