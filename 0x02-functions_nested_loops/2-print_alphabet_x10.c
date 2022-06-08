@@ -5,7 +5,7 @@
  *Return - 0
  */
 
-int print_alphabet_x10(void)
+void print_alphabet_x10(void)
 {
 	int n;
 	int m;
@@ -16,6 +16,6 @@ int print_alphabet_x10(void)
 		{
 			_putchar(m);
 		}
-		_putchar(10);
+	_putchar(10);
 	}
 }
