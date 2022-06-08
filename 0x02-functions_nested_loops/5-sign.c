@@ -1,10 +1,10 @@
 #include "main.h"
 /*
- *print_sign - it shows the sign of the number
+ *print_sign - it shows the input number.
  *
  *@n: The input number of integer.
  *
- *Return: 1 is greater than zero, 0 is zero. 
+ *Return: 1 is greater than zero, 0 is zero.
  *-1 is less than zero.
  */
 int print_sign(int n)
