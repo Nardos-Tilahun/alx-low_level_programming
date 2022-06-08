@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- *main - we start by printing small alphabet from a to z
+ *print_alphabet - we start by printing small alphabet from a to z
  *
  *
  *Return: 0
