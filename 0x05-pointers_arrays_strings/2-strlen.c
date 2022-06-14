@@ -1,11 +1,16 @@
 #include "main.h"/
 /**
  *_strlen shows the length of a string
- *
- *Return: always 0
+ *@s: input string
+ *Return: integer
  */
 int _strlen(char *s)
 {
-	strlen(s);
-	return 0;
+	int i = 0;
+	
+	while (*(s + i) != '\0')
+	{
+		i++;
+	}
+	return (i);
 }
