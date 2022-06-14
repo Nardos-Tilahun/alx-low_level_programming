@@ -19,10 +19,10 @@ void print_rev(char *s)
 		{
 			break;
 		}
-		max = count ++
+		max = count ++;
 		for (count1 = max; count1 <= 0; count1--)
 		{
-			_putchar(s[count]);
+			_putchar(s[count1]);
 		}
 	_putchar(s[count]);
 	}
