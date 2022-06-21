@@ -1,9 +1,10 @@
+
 /*
  * File: 7-print_chessboard.c
  * Auth: Brennan D Baraban
  */
 
-#include "holberton.h"
+#include "main.h"
 
 /**
  * print_chessboard - Prints a chessboard.
