@@ -8,13 +8,15 @@
 int main(void)
 {
 	int i;
-	int j;
-	int k;
-i
+
 	for (i = 0; i <= 7; i++)
 	{
+		int j;
+
 		for (j = i + 1; j <= 8; j++)
 		{
+			int k;
+
 			for (k = j + 1; k <= 9; k++)
 			{
 				putchar('0' + i);
