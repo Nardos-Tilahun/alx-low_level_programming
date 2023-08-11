@@ -7,7 +7,14 @@
  */
 int main(void)
 {
-	
-	putchar();
+	char c;
+
+	c = 97;
+	while (c < 123)
+	{
+		putchar(c);
+		c++;
+	}
+	putchar('\n');
 	return (0);
 }
