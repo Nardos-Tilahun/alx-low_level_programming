@@ -12,7 +12,7 @@ int main(void)
 	c = 97;
 	while (c < 123)
 	{
-		if(c != 'q' && c != 'e')
+		if (c != 'q' && c != 'e')
 			putchar(c);
 		c++;
 	}
