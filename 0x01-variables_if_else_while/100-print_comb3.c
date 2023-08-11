@@ -20,8 +20,11 @@ int main(void)
 		}
 		if (i != 8 || j != 9)
 		{
-			putchar(',');
-			putchar(' ');
+			if (i != 8 || j != 9)
+			{
+				putchar(',');
+				putchar(' ');
+			}
 		}
 	}
 	return (0);
