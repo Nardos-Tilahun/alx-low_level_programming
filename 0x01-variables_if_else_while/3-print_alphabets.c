@@ -16,7 +16,7 @@ int main(void)
 		c++;
 	}
 	c = 65;
-	while (c < 65)
+	while (c < 91)
 	{
 		putchar(c);
 		c++;
