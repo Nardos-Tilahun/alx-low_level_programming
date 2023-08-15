@@ -22,5 +22,6 @@ int main(void)
 		n = c;
 		a++;
 	}
+	printf("\n");
 	return (0);
 }
