@@ -10,9 +10,9 @@ int main(void)
 	unsigned long c, n = 2, m = 3, a = 2, nh1, mh1, nh2, mh2, h1, h2;
 
 	printf("1, 2, ");
-	while (a < 98)
+	while (a < 92)
 	{
-		printf("%lu", m);
+		printf("%lu, ", m);
 		c =  m;
 		m = m + n;
 		n = c;
@@ -22,7 +22,7 @@ int main(void)
 	nh2 = n % 10000000000;
 	mh1 = m / 10000000000;
 	mh2 = m % 10000000000;
-	while (a > 90 && a < 97)
+	while (a > 92 && a < 97)
 	{
 		h1 = nh1 + mh1;
 		h2 = nh2 + mh2;
