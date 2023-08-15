@@ -13,7 +13,7 @@ int main(void)
 	while (a < 50)
 	{
 		printf("%d, ", m);
-		m = c;
+		c = m;
 		m = n + m;
 		n = c;
 		a++;
