@@ -29,7 +29,7 @@ int main(void)
 			h2 = nh2 + mh2;
 			if (h2 > 9999999999)
 			{
-				h1 = nh1 + 1;
+				h1 = h1 + 1;
 				h2 = h2 % 10000000000;
 			}
 			printf("%lu%lu", h1, h2);
