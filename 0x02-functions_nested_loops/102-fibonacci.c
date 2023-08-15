@@ -12,7 +12,11 @@ int main(void)
 	printf("1, 2, ");
 	while (a < 50)
 	{
-		printf("%ld, ", m);
+		printf("%ld", m);
+		if (a != 49)
+		{
+			printf(", ");
+		}
 		c = m;
 		m = n + m;
 		n = c;
