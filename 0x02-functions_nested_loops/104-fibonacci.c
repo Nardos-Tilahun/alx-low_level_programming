@@ -36,7 +36,6 @@ int main(void)
 		nh2 = mh2;
 		mh1 = h1;
 		mh2 = h2;
-		}
 		if (a != 97)
 		{
 			printf(", ");
