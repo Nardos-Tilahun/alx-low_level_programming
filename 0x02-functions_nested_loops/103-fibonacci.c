@@ -9,7 +9,6 @@ int main(void)
 {
 	long sum = 2, c, n = 2, m = 3;
 
-	printf("1, 2, ");
 	while (m < 4000000)
 	{
 		if (m % 2 == 0)
