@@ -7,7 +7,7 @@
  */
 int main(void)
 {
-	int a = 2, c, n = 2, m = 3;
+	long a = 2, c, n = 2, m = 3;
 
 	printf("1, 2, ");
 	while (a < 50)
