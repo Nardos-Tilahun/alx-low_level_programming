@@ -7,7 +7,8 @@
  */
 int main(void)
 {
-	unsigned long a = 2, c, n = 2, m = 3;
+	unsigned long c, n = 2, m = 3;
+	int a = 2;
 
 	printf("1, 2, ");
 	while (a < 98)
