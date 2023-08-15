@@ -12,31 +12,30 @@ int main(void)
 	printf("1, 2, ");
 	while (a < 98)
 	{
-		if (a < 91)
+		printf("%lu", m);
+		c =  m;
+		m = m + n;
+		n = c;
+		a++;
+	}
+	nh1 = n / 10000000000;
+	nh2 = n % 10000000000;
+	mh1 = m / 10000000000;
+	mh2 = m % 10000000000;
+	while (a > 90 && a < 97)
+	{
+		h1 = nh1 + mh1;
+		h2 = nh2 + mh2;
+		if (h2 > 9999999999)
 		{
-			printf("%lu", m);
-			c =  m;
-			m = m + n;
-			n = c;
+			h1 = h1 + 1;
+			h2 = h2 % 10000000000;
 		}
-		if (a > 90 && a < 97)
-		{
-			nh1 = n / 10000000000;
-			nh2 = n % 10000000000;
-			mh1 = m / 10000000000;
-			mh2 = m % 10000000000;
-			h1 = nh1 + mh1;
-			h2 = nh2 + mh2;
-			if (h2 > 9999999999)
-			{
-				h1 = h1 + 1;
-				h2 = h2 % 10000000000;
-			}
-			printf("%lu%lu", h1, h2);
-			nh1 = mh1;
-			nh2 = mh2;
-			mh1 = h1;
-			mh2 = h2;
+		printf("%lu%lu", h1, h2);
+		nh1 = mh1;
+		nh2 = mh2;
+		mh1 = h1;
+		mh2 = h2;
 		}
 		if (a != 97)
 		{
