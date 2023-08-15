@@ -12,14 +12,14 @@ int main(void)
 	printf("1, 2, ");
 	while (a < 98)
 	{
-		if (a < 92)
+		if (a < 91)
 		{
 			printf("%lu", m);
 			c =  m;
 			m = m + n;
 			n = c;
 		}
-		else
+		if (a > 90 && a < 97)
 		{
 			nh1 = n / 10000000000;
 			nh2 = n % 10000000000;
