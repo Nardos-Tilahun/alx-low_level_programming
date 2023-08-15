@@ -10,7 +10,7 @@ int main(void)
 	unsigned long c, n = 2, m = 3, a = 2, nh1, mh1, nh2, mh2, h1, h2;
 
 	printf("1, 2, ");
-	while (a < 97)
+	while (a < 98)
 	{
 		if (a < 92)
 		{
@@ -19,7 +19,7 @@ int main(void)
 			m = m + n;
 			n = c;
 		}
-		if (a > 93)
+		else
 		{
 			nh1 = n / 10000000000;
 			nh2 = n % 10000000000;
