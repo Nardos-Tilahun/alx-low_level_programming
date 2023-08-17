@@ -6,25 +6,29 @@
  */
 void print_number(int n)
 {
-	long nt i, j, k;
+	int m = 1, i;
 
-	if (size > 0)
+	if (n == 0)
 	{
-		for (i = size; i > 0; i--)
-		{
-			for (j = i - 1; j > 0; j--)
-			{
-				_putchar(' ');
-			}
-			for (k = 0; k <= size - i; k++)
-			{
-				_putchar('#');
-			}
-			_putchar('\n');
-		}
+		_putchar(n + '0');
 	}
 	else
 	{
-		_putchar('\n');
+		if (n < 0)
+		{
+			n = n * -1;
+			_putchar('-');
+		}
+		while (n >= m)
+		{
+			m = m * 10;
+		}
+		while (m != 1)
+		{
+			m = m / 10;
+			i = n / m;
+			n = n % m;
+			_putchar(i + '0');
+		}
 	}
 }
