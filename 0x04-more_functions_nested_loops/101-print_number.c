@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * print_triangle - prints a triangle, followed by a new line.
- * @size: triangle base and height
+ * print_number - prints an integer.
+ * @n: hold a number that will be printed
  */
-void print_triangle(int size)
+void print_number(int n)
 {
-	int i, j, k;
+	long nt i, j, k;
 
 	if (size > 0)
 	{
