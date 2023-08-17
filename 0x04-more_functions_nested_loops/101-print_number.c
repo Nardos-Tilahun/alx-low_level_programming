@@ -1,36 +1,30 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
- * main -prints the numbers, from 0 to 9, followed by a new line
- * Return: 0
+ * print_triangle - prints a triangle, followed by a new line.
+ * @size: triangle base and height
  */
-int main(void)
+void print_triangle(int size)
 {
-	int i;
+	int i, j, k;
 
-	for (i = 1; i <= 100; i++)
+	if (size > 0)
 	{
-		if (!(i % 3 == 0 || i % 5 == 0))
+		for (i = size; i > 0; i--)
 		{
-			printf("%d", i);
-		}
-		else if (i % 3 == 0 && i % 5 == 0)
-		{
-			printf("FizzBuzz");
-		}
-		else if (i % 3 == 0)
-		{
-			printf("Fizz");
-		}
-		else
-		{
-			printf("Buzz");
-		}
-		if (i != 100)
-		{
-			printf(" ");
+			for (j = i - 1; j > 0; j--)
+			{
+				_putchar(' ');
+			}
+			for (k = 0; k <= size - i; k++)
+			{
+				_putchar('#');
+			}
+			_putchar('\n');
 		}
 	}
-	printf("\n");
-	return (0);
+	else
+	{
+		_putchar('\n');
+	}
 }

@@ -26,7 +26,7 @@ int main(void)
 			}
 		}
 	}
-	printf("%ld", i - 1);
+	printf("%ld\n", i - 1);
 
 	return (0);
 }
