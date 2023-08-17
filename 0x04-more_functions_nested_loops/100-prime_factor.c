@@ -8,13 +8,13 @@
 int main(void)
 {
 	long n = 612852475143, i, m;
-	double s = sqrt(n);
+	float s = sqrt(n);
 
-	for (i = 1; i <= m; i++)
+	for (i = 1; i <= s; i++)
 	{
 		if (n % i == 0)
 		{
-			m = m / i;
+			m = n / i;
 		}
 	}
 	printf("%ld\n", m);
