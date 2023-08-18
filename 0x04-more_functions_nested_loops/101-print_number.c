@@ -6,7 +6,8 @@
  */
 void print_number(int n)
 {
-	int m = 1, i;
+	unsigned int m = 1, i;
+	unsigned int p = n;
 
 	if (n == 0)
 	{
@@ -18,15 +19,16 @@ void print_number(int n)
 		{
 			n = n * -1;
 			_putchar(45);
+			p = n;
 		}
-		while (n / 10 >= m)
+		while (p / 10 >= m)
 		{
 			m = m * 10;
 		}
 		while (m != 0)
 		{
-			i = n / m;
-			n = n % m;
+			i = p / m;
+			p = p % m;
 			_putchar(i + '0');
 			m = m / 10;
 		}
