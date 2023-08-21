@@ -21,7 +21,7 @@ int main(void)
 		pas[i] = rand() % 78;
 		s += (pas[i] + '0');
 		putchar(pas[i] + '0');
-		if ((5000 - s) - '0' < 78)
+		if ((3000 - s) - '0' < 78)
 		{
 			n = 2772 - s - '0';
 			s += n;
