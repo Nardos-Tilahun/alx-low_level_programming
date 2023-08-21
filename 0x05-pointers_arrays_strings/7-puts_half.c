@@ -12,7 +12,7 @@ void puts_half(char *s)
 	{
 		i++;
 	}
-	len = --i;
+	len = i;
 	if (len % 2 == 0)
 	{
 		n = len / 2;
