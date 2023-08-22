@@ -9,23 +9,23 @@
 */
 int main(void)
 {
-	int pas[100];
+	int pas[92];
 	int i, s, n;
 
 	s = 0;
 
 	srand(time(NULL));
 
-	for (i = 0; i < 100; i++)
+	for (i = 0; i < 92; i++)
 	{
-		pas[i] = rand() % 78;
-		s += (pas[i] + '0');
-		putchar(pas[i] + '0');
-		if ((3000 - s) - '0' < 78)
+		pas[i] = rand() % 92;
+		s += (pas[i] + 33);
+		putchar(pas[i] + 33);
+		if ((4600  - s) - 33 < 92)
 		{
-			n = 2772 - s - '0';
+			n = 4600 - s - 33;
 			s += n;
-			putchar(n + '0');
+			putchar(n + 33);
 			break;
 		}
 	}
