@@ -1,6 +1,6 @@
 #include <stdlib.h>
-#include <stdio.h>
 #include <time.h>
+#include <stdio.h>
 
 /**
 * main - check the code
@@ -9,27 +9,21 @@
 */
 int main(void)
 {
-	int pas[15];
-	int i = 0, s;
-
-	s = 0;
+	int rpa[100];
+	int i = 0, s = 0, r = 0;
 
 	srand(time(NULL));
-
-	while (i < 15)
+	while (i < 100)
 	{
-		pas[i] = rand() % 92;
-		s += (pas[i] + 33);
-		putchar(pas[i] + 33);
-		/* 
-		 * if ((4600  - s) - 33 < 92)
-		 * {
-		 * n = 4600 - s - 33;
-		 * *s += n;
-		 * putchar(n + 33);
-		 * break;
-		 * }
-		 */
+		rpa[i] = rand() % 92;
+		s = s + (rpa[i] + 33);
+		putchar(rpa[i] + 33);
+		if ((5323 - s - 33) < 92)
+		{
+			r = 5323 - s - 33;
+			putchar(r + 33);
+			break;
+		}
 		i++;
 	}
 	return (0);
