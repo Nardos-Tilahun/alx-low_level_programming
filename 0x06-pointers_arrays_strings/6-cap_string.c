@@ -11,11 +11,10 @@ char *cap_string(char *s)
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (s[i] == '\t')
-			s[i] = ' ';
 		switch (s[i])
 		case ' ':
 		case '\n':
+		case '\t':
 		case ',':
 		case ';':
 		case '.':
@@ -29,5 +28,6 @@ char *cap_string(char *s)
 			if (s[i + 1] >= 97 && s[i + 1] <= 122)
 				s[i + 1] -= 32;
 	}
+	s[i] ='\0';
 	return (s);
 }
