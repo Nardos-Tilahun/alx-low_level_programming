@@ -11,7 +11,24 @@ char *cap_string(char *s)
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		switch (s[i])
+		/*if (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
+		{
+			if (s[i + 1] >= 97 && s[i + 1] <= 122)
+                                s[i + 1] -= 32;
+		}
+		else if (s[i] == ',' || s[i] == ';' || s[i] == '.')
+		{
+			if (s[i + 1] >= 97 && s[i + 1] <= 122)
+                                s[i + 1] -= 32;
+
+		}
+		else if (s[i] == '!' || s[i] == '?' || s[i] == '"')
+		{
+			if (s[i + 1] >= 97 && s[i + 1] <= 122)
+                                s[i + 1] -= 32;
+		}
+		else if (s[i] == 
+		/*/switch (s[i])
 		case ' ':
 		case '\n':
 		case '\t':
@@ -20,7 +37,7 @@ char *cap_string(char *s)
 		case '.':
 		case '!':
 		case '?':
-		case '"':
+		case '\"':
 		case '(':
 		case ')':
 		case '{':
