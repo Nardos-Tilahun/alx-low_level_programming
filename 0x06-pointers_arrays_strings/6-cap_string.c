@@ -12,6 +12,7 @@ char *cap_string(char *s)
 	for (i = 0; s[i] != '\0'; i++)
 	{
 		switch (s[i])
+		{
 		case 32:
 		case 10:
 		case 9:
@@ -25,9 +26,12 @@ char *cap_string(char *s)
 		case 41:
 		case 123:
 		case 125:
-		case 0:
 			if (s[i + 1] >= 97 && s[i + 1] <= 122)
 				s[i + 1] -= 32;
+		}
+		if (i == 0)
+			if (s[i] >= 97 && s[i] <= 122)
+                                s[i] -= 32;
 	}
 	s[i] ='\0';
 	return (s);
