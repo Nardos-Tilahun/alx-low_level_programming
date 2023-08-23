@@ -25,7 +25,7 @@ char *cap_string(char *s)
 		case ')':
 		case '{':
 		case '}':
-			if (s[i + 1] >= 97 && s[i + 1] <= 122 && s[i + 1] != '\0')
+			if (s[i + 1] >= 97 && s[i + 1] <= 122)
 				s[i + 1] -= 32;
 			if (s[i] == '\t')
 				s[i] = ' ';
