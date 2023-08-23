@@ -31,7 +31,10 @@ char *cap_string(char *s)
 		{
 			if (s[i + 1] >= 97 && s[i + 1] <= 122)
                                 s[i + 1] -= 32;
-		}	/*switch (s[i])
+		}
+		if (s[i] == '\t')
+			s[i] = ' ';	
+		/*switch (s[i])
 		case 32:
 		case 10:
 		case 9:
