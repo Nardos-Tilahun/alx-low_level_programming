@@ -40,10 +40,7 @@ char *sum(char *n1, char *n2, char *r, int s, int n1l, int n2l)
 				rm = 1;
 			}
 			else
-			{
 				t[cr] = 58 - (106 - t[cr]);
-				rm = 0;
-			}
 		}
 	}
 	if ((rm == 1 && cr == 0) || s == n1l || s == n2l)
