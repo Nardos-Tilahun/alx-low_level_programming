@@ -35,11 +35,19 @@ char *sum(char *n1, char *n2, char *r, int s, int n1l, int n2l)
 		{
 			t[cr] = n1[cn1] + rm;
 			if (t[cr] >= 58)
+			{
 				t[cr] = t[cr] - 10;
+				rm = 1;
+			}
+			else
+			{
+				t[cr] = 58 - (106 - t[cr]);
+				rm = 0;
+			}
 		}
 	}
 	if ((rm == 1 && cr == 0) || s == n1l || s == n2l)
-		return 0;
+		return (0);
 	if (rm == 1)
 		t[cr--] = rm + 48;
 	t[cr] = '\0';
@@ -54,8 +62,7 @@ char *sum(char *n1, char *n2, char *r, int s, int n1l, int n2l)
  * @m2: operand 2
  * @r: result stop
  * @s: sum
- * Return - characrter array
- * This is a dunction resturn add
+ * Return: character pointer
  */
 char *infinite_add(char *m1, char *m2, char *r, int s)
 {
