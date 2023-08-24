@@ -17,10 +17,12 @@ void print_buffer(char *b, int s)
 		for (j = 0; j < 10; j++)
 		{
 			if (j % 2 == 0)
+			{
 				printf(" ");
+			}
 			if (i + j > 125)
 			{
-				printf("\t  ");
+				printf("         ");
 				break;
 			}
 			printf("%02x", *(b + i + j));
