@@ -27,10 +27,10 @@ void print_buffer(char *b, int s)
 			}
 			if (i + j > 125)
 			{
-				printf("         ");
-				break;
+				printf("  ");
 			}
-			printf("%02x", *(b + i + j));
+			else
+				printf("%02x", *(b + i + j));
 		}
 		printf(" ");
 		for (j = 0; j < 10; j++)
@@ -38,7 +38,7 @@ void print_buffer(char *b, int s)
 			if (i + j >= s)
 				break;
 			t = *(b + i + j);
-			if (t >= 32 && t < 126 && t != 47 && t != 10)
+			if (t >= 32 && t <= 132)
 				printf("%c", t);
 			else
 				printf("%c", 46);
