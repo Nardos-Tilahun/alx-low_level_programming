@@ -20,7 +20,7 @@ void print_buffer(char *b, int s)
 				printf(" ");
 			if (i + j > 125)
 			{
-				printf("         ");
+				printf("\t  ");
 				break;
 			}
 			printf("%02x", *(b + i + j));
