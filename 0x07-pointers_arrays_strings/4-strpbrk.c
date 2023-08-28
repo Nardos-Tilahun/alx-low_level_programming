@@ -20,5 +20,5 @@ char *_strpbrk(char *s, char *b)
 			}
 		}
 	}
-	return ("");
+	return ('\0');
 }
