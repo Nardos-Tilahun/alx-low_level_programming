@@ -19,7 +19,7 @@ int wildcm(char *s1, char *s2, int a, int b)
 			return (wildcm(s1 + 2, s2 - 1, a, b));
 		else
 			return (0);
-	else if (*s1 == '\0' && (*(s1 - 1) != *(s2 - 1)))
+	else if (*s1 == '\0' && (*(s1 - 1) != *(s2 - 1)) && *(s2 + 2) == '\0')
 		return (0);
 	else if (*s1 != *s2)
 	{
