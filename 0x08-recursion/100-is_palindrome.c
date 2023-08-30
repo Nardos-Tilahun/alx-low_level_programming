@@ -37,5 +37,6 @@ int palindrome(char *s, int n, int m)
 int is_palindrome(char *s)
 {
 	int n = _palindrome(s);
+
 	return (palindrome(s, n, 0));
 }
