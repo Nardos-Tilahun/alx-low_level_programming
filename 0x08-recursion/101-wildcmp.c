@@ -15,7 +15,10 @@ int wildcm(char *s1, char *s2, int a, int b)
 	else if ((*s1 == '\0' && *s2 == '*' && *(s2 + 1) == '\0'))
 		return (1);
 	else if (*s2 != '*' && *(s2 + 1) == '\0' && *(s1 + 1) != *(s2 + 1))
-		return (0);
+		if (*(s1 + 2) != *(s2 + 2))
+			return (wildcm(s1 + 2, s2 - 1, a, b));
+		else
+			return (0);
 	else if (*s1 == '\0' && (*(s1 - 1) != *(s2 - 1)))
 		return (0);
 	else if (*s1 != *s2)
