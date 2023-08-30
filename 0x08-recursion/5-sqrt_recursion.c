@@ -9,15 +9,15 @@
 
 int sqrt_other(int n, int m)
 {
-	if (n == 1)
+	if (m == 1)
 		return (1);
-	else if (n * n > m)
-		return (sqrt_other(n - 1, m));
+	else if (n * n < m)
+		return (sqrt_other(n + 1, m));
 	else if (n * n == m)
 		return (n);
 	else
 		return (-1);
-	return (1);
+	return (-1);
 }
 /**
  * _sqrt_recursion - square root
@@ -28,5 +28,5 @@ int _sqrt_recursion(int n)
 {
 	if (n < 0)
 		return (-1);
-	return (sqrt_other(n, n));
+	return (sqrt_other(1, n));
 }
