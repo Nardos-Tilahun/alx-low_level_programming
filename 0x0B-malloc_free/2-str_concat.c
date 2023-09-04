@@ -2,22 +2,16 @@
 #include <stdlib.h>
 
 /**
- * str_concat -  newly concatinated allocated space in memory
+ * helpfun -  newly concatinated allocated space in memory
  * @s1: first character pointer argument
  * @s2: second character pointer argument
  * Return: pointer character
  */
-char *str_concat(char *s1, char *s2)
+char *helpfun(char *s1, char *s2)
 {
 	unsigned int i, j, size, s1s, s2s;
 	char *ptr;
 
-	if (s1 == NULL && s2 == NULL)
-		return ("");
-	if (s1 == NULL)
-		return (s2);
-	if (s2 == NULL)
-		return (s1);
 	for (i = 0; *(s1 + i) != '\0'; i++)
 		;
 	for (j = 0; *(s2 + j) != '\0'; j++)
@@ -38,5 +32,46 @@ char *str_concat(char *s1, char *s2)
 	for (j = 0; s1s + j < size - 1; j++)
 		*(ptr + s1s + j) = *(s2 + j);
 	*(ptr + size - 1) = '\0';
+	return (ptr);
+}
+
+/**
+ * str_concat -  newly concatinated allocated space in memory
+ * @s1: first character pointer argument
+ * @s2: second character pointer argument
+ * Return: pointer character
+ */
+char *str_concat(char *s1, char *s2)
+{
+	unsigned int i, j;
+	char *ptr;
+
+	if (s1 == NULL && s2 == NULL)
+	{
+		ptr = (char *) malloc(sizeof(char));
+		*ptr = '\0';
+		return (ptr);
+	}
+	else if (s1 == NULL)
+	{
+		for (i = 0; *(s2 + i) != '\0'; i++)
+			;
+		ptr = (char *) malloc(sizeof(char) * (i + 1));
+		for (i = 0; *(s2 + i) != '\0'; i++)
+			*(ptr + i) = *(s2 + i);
+		*(ptr + i) = '\0';
+		return (ptr);
+	}
+	else if (s2 == NULL)
+	{
+		for (j = 0; *(s1 + j) != '\0'; j++)
+			;
+		ptr = (char *) malloc(sizeof(char) * (j + 1));
+		for (j = 0; *(s1 + j) != '\0'; j++)
+			*(ptr + j) = *(s1 + j);
+		*(ptr + j) = '\0';
+		return (ptr);
+	}
+	ptr = helpfun(s1, s2);
 	return (ptr);
 }
