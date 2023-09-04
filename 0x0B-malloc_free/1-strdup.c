@@ -11,6 +11,10 @@ char *_strdup(char *str)
 	unsigned int i, size;
 	char *ptr;
 
+	if (str == NULL)
+	{
+		return (NULL);
+	}
 	for (i = 0; *(str + i) != '\0'; i++)
 		;
 	size = i;
