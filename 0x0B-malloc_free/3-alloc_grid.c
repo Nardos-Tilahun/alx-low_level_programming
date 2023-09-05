@@ -25,7 +25,8 @@ int **alloc_grid(int w, int h)
 		if (*(hp + i) == NULL)
 		{
 			for (j = i - 1; j >= 0; j--)
-				free (*(hp + j));
+				free(*(hp + j));
+			free(hp);
 			return (NULL);
 		}
 	}
