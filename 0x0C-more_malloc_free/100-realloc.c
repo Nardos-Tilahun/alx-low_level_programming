@@ -33,7 +33,7 @@ void *_realloc(void *ptr, unsigned int os, unsigned int ns)
 		if (p == NULL)
 			return (NULL);
 		for (i = 0; i < ns && i < os; i++)
-			*(p + i) = *((char*)ptr + i);
+			*(p + i) = *((char *)ptr + i);
 		free(ptr);
 	}
 	return (p);
