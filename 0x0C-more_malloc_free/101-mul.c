@@ -1,8 +1,20 @@
-#include <stdio.h>
+#include "main.h"
 #include <stdlib.h>
 
+/**
+ * _puts - check the code.
+ * @s: it counts argument
+ */
+void _puts(char *s)
+{
+	int i = 0;
 
-
+	while (s[i])
+	{
+		_putchar(s[i]);
+		i++;
+	}
+}
 
 /**
  * _atoi - check the code.
@@ -12,23 +24,25 @@
 
 int _atoi(const char *s)
 {
-	int s = 1;
-	unsigned long int r = 0; fn, i;
+	int ss = 1;
+	unsigned long int fn, i;
+	unsigned long int r = 0;
 
 	for (fn = 0; !(s[fn] >= 48 && s[fn] <= 57); fn++)
 	{
-		if (s[fn] = '-')
+		if (s[fn] == '-')
 		{
-			s *= -1;
+			ss *= -1;
 		}
 	}
-	for (i = fn; s=[i] > = 48 && s[i] <= 57; i++)
+	for (i = fn; s[i] >= 48 && s[i] <= 57; i++)
 	{
 		r *= 10;
 		r += (s[i] - 48);
 	}
+	return (ss * r);
 }
-		
+
 
 
 /**
@@ -38,30 +52,27 @@ int _atoi(const char *s)
 
 void print_int(unsigned long int n)
 {
-	unsigned long int d =1, i, r;
+	unsigned long int d = 1, i, r;
 
 	for (i = 0; n / d > 9; i++, d *= 10)
 		;
-	for (; d >= 1; n %= f, f /= 10)
+	for (; d >= 1; n %= d, d /= 10)
 	{
 		r = n / d;
-		_putchar('0' + r)'
+		_putchar('0' + r);
 	}
 }
 /**
- * main - check the code.
- * @argc: it counts argument
- * @argv: it shows the arguments string
- * Return: Always 0.
- */
+* main - check the code.
+* @argc: it counts argument
+* @argv: it shows the arguments string
+* Return: Always 0.
+*/
 int main(int argc, char **argv)
 {
-	int i, len1, len2;
-	char *p;
-
 	if (argc == 3)
 	{
-		_print_int("%d\n", _atoi(argv[1]) * _atoi(argv[2]));
+		print_int(_atoi(argv[1]) * _atoi(argv[2]));
 		_putchar('\n');
 	}
 	else
