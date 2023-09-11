@@ -1,5 +1,6 @@
 #include "dog.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
  * new_dog - check the code
@@ -12,6 +13,9 @@ dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t C;
 	struct Dog *DP = &C;
+
+	if (DP == NULL)
+		return NULL;
 
 	DP->name = name;
 	DP->age = age;
