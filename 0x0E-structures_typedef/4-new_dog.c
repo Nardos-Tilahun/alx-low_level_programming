@@ -15,7 +15,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	struct Dog *DP = &C;
 
 	if (DP == NULL)
-		return (malloc(sizeof(dog_t));
+		return (malloc(sizeof(dog_t)));
 	DP->name = name;
 	DP->age = age;
 	DP->owner = owner;
