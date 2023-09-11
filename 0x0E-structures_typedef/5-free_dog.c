@@ -7,8 +7,7 @@
  */
 void free_dog(dog_t *d)
 {
-	free((char*)d);
-	free((int*)d + 8);
-	free((char*)d + 16);
+	free(d->name);
+	free(d->owner);
 	free(d);
 }
