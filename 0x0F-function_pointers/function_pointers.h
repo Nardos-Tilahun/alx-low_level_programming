@@ -1,7 +1,6 @@
-#include <stddef.h>
 #ifndef MAIN_H
 #define MAIN_H
-
+#include <stddef.h>
 /*
  * Protoype for the code that include this as a header file
  */
