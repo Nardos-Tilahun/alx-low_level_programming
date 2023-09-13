@@ -1,10 +1,10 @@
-#include <stdio.h> 
+#include <stdio.h>
 #include <stdlib.h>
 
 /**
  * main - check the code
- * @argc - integer
- * @argv - pointer to pointer that point to character
+ * @argc: integer
+ * @argv: pointer to pointer that point to character
  * Return: Always 0.
  */
 int main(int argc, char **argv)
@@ -22,7 +22,7 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		exit(2);
 	}
-	a = (char*)main;
+	a = (char *)main;
 	for (i = 0; i < (len - 1); i++)
 		printf("%02hhx ", a[i]);
 	printf("%02hhx\n", a[i]);
