@@ -19,7 +19,7 @@ int main(int argc, char **argv)
 		exit(98);
 	}
 	op = argv[2];
-	if (!(*op == '+' || *op == '-' || *op == '*' || *op == '/' || *op == '%'))
+	if (!(op == NULL || *op == '+' || *op == '-' || *op == '*' || *op == '/' || *op == '%'))
 	{
 		printf("Error\n");
 		exit(99);
