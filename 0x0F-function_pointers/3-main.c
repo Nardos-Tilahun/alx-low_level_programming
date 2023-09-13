@@ -10,7 +10,7 @@
  */
 int main(int argc, char **argv)
 {
-	char *op;
+	char *o;
 	int d;
 
 	if (argc != 4)
@@ -19,12 +19,12 @@ int main(int argc, char **argv)
 		exit(98);
 	}
 	op = argv[2];
-	if (!(op == NULL || *op == '+' || *op == '-' || *op == '*' || *op == '/' || *op == '%'))
+	if (!(o == NULL || *o == '\0'))
 	{
 		printf("Error\n");
 		exit(99);
 	}
-	if ((*op == '/' || *op == '%') && (atoi(argv[3]) == 0))
+	if ((*o == '/' || *o == '%') && (atoi(argv[3]) == 0))
 	{
 		printf("Error\n");
 		exit(100);
