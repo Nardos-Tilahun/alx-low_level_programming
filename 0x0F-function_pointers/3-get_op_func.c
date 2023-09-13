@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include "function_pointers.h"
 #include "3-calc.h"
 /**
  * get_op_func - check if a number is equal to 98
