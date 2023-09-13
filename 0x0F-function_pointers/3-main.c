@@ -18,8 +18,8 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		exit(98);
 	}
-	op = argv[2];
-	if (!(o == NULL || *o == '\0'))
+	o = argv[2];
+	if (get_op_func(o) == NULL || *o == '\0')
 	{
 		printf("Error\n");
 		exit(99);
