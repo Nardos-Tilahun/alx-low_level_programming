@@ -10,13 +10,14 @@
 int main(int argc, char **argv)
 {
 	char *a;
-	int i, len = atoi(argv[1]);
+	int i, len;
 
 	if (argc != 2)
 	{
 		printf("Error\n");
 		exit(1);
 	}
+	len = atoi(argv[1]);
 	if (len < 0)
 	{
 		printf("Error\n");
