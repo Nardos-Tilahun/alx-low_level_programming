@@ -13,7 +13,7 @@ void print_all(const char * const sc, ...)
 	va_list args;
 
 	va_start(args, sc);
-	if (*(sc + i) != '\0')
+	if (sc != NULL)
 	{
 		while (*(sc + i) != '\0')
 		{
