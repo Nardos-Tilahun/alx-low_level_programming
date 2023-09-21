@@ -11,10 +11,7 @@ unsigned int strlength(char *str)
 	unsigned int len = 0;
 
 	if (str == NULL)
-	{
-		str = "(nil)";
 		return (0);
-	}
 	while (*str++)
 		len++;
 	return (len);
@@ -28,18 +25,16 @@ unsigned int strlength(char *str)
 size_t print_list(const list_t *h)
 {
 	size_t countNode = 0;
-	const list_t *temp;
 
 	if (h == NULL)
 		exit(1);
-	temp = h;
-	while (temp != NULL)
+	while (h != NULL)
 	{
-		if (temp->str != NULL)
-			printf("[%u] %s\n", strlength(temp->str), temp->str);
+		if (h->str != NULL)
+			printf("[%d] %s\n", strlength(h->str), h->str);
 		else
-			printf("[%u] (nil)\n", strlength(temp->str));
-		temp = temp->next;
+			printf("[%d] (nil)\n", strlength(h->str));
+		h = h->next;
 		countNode++;
 	}
 	return (countNode);
