@@ -26,8 +26,6 @@ size_t print_list(const list_t *h)
 {
 	size_t countNode = 0;
 
-	if (h == NULL)
-		exit(1);
 	while (h != NULL)
 	{
 		if (h->str != NULL)
