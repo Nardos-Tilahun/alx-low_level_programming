@@ -9,4 +9,7 @@
 8. Sum list - function that returns the sum of all the data (n) of a listint_t linked list.
 9. Insert - function that inserts a new node at a given position.
 10. Delete at index - function that deletes the node at index index of a listint_t linked list.
-
+11. Reverse list - function that reverses a listint_t linked list.
+12. Print (safe version) - function that prints a listint_t linked list.
+13. Free (safe version) - function that frees a listint_t list.
+14. Find the loop - function that finds the loop in a linked list.
