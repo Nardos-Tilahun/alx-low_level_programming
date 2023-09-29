@@ -8,17 +8,19 @@
  */
 int get_bit(unsigned long int n, unsigned int idx)
 {
-	int i = 63;
+	unsigned int i = 63;
 
+	if ((int)n < 0 || (int)idx < 0)
+		return (-1);
 	while (i)
 	{
 		i--;
 		if (((n >> i) & 1) == 1)
 			break;
 	}
-	if ( idx > 63)
+	if (idx > 63)
 		return (-1);
-	return (((n >> idx) & 1));
+	else if ((n & (1 << idx)) != 0)
 		return (1);
 	return (0);
 }
