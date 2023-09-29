@@ -8,7 +8,7 @@
  */
 int get_bit(unsigned long int n, unsigned int idx)
 {
-	unsigned int i = 63;
+	int i = 63;
 
 	while (i)
 	{
@@ -16,7 +16,7 @@ int get_bit(unsigned long int n, unsigned int idx)
 		if (((n >> i) & 1) == 1)
 			break;
 	}
-	if (i < idx || idx > 63)
+	if (i < (int)idx || idx > 63)
 		return (-1);
 	return (((n >> idx) & 1));
 		return (1);
