@@ -11,14 +11,7 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 	int i = 63, count = 0;
 	unsigned long int k = 0;
 
-	if (n == 0 && m == 0)
-		return (k);
-	else if (n == 0)
-		k = (~m);
-	else if (m == 0)
-		k = (~n);
-	else
-		k = n ^ m;
+	k = n ^ m;
 	while (i >= 0)
 	{
 		if (((k >> i) & 1))
