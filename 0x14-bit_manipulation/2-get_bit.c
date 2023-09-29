@@ -16,7 +16,7 @@ int get_bit(unsigned long int n, unsigned int idx)
 		if (((n >> i) & 1) == 1)
 			break;
 	}
-	if (i < (int)idx || idx > 63)
+	if ( idx > 63)
 		return (-1);
 	return (((n >> idx) & 1));
 		return (1);
