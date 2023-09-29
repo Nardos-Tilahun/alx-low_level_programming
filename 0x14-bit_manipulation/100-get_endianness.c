@@ -4,7 +4,7 @@
  * get_endianness - check the code
  * Return: Always integer sum.
  */
-int get_endianness()
+int get_endianness(void)
 {
 	unsigned int i = 10;
 	char *check = (char *)&i;
