@@ -18,7 +18,7 @@ int get_bit(unsigned long int n, unsigned int idx)
 	}
 	if (i < idx || idx > 63)
 		return (-1);
-	return (((n >> idx) & 1))
+	return (((n >> idx) & 1));
 		return (1);
 	return (0);
 }
