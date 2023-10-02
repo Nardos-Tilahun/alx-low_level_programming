@@ -2,12 +2,12 @@
 #include <stdlib.h>
 
 /**
- * read_textfile - check the code
+ * append_text_to_file - check the code
  * @filename: file name
- * @letters: letter
+ * @text_content: letter
  * Return: Always 0.
  */
-ssize_t read_textfile(const char *filename, size_t letters)
+int append_text_to_file(const char *filename, char *text_content)
 {
 	ssize_t n;
 	ssize_t m, p;
@@ -17,11 +17,8 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	{
 		return (0);
 	}
-	p = open(filename, O_RDONLY);
+	p = open(filename, O_APPEND);
 	if (p == -1)
-		return (0);
-	buff = (char *)malloc(letters * sizeof(char));
-	if (buff == NULL)
 	{
 		return (0);
 	}
