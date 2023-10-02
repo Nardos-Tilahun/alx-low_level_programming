@@ -2,6 +2,7 @@
 #define MAIN_H
 #include <stdlib.h>
 #include <unistd.h>
+#include <fcntl.h>
 /*
  * Protoype for the code that include this as a header file
  */
