@@ -2,6 +2,9 @@
 #define MAIN_H
 #include <unistd.h>
 #include <fcntl.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <stdlib.h>
 /*
  * Protoype for the code that include this as a header file
  */
