@@ -4,15 +4,16 @@
 /**
  * print_error - check the code
  * @error: file name
- * @fd: letter
+ * @filename: letter
  * @ec: error
  * Return: Always 0.
  */
 
 
-void print_error(const char *error, const char *filename, int ec) {
-    dprintf(2, error, filename);
-    exit(ec);
+void print_error(const char *error, const char *filename, int ec)
+{
+	dprintf(2, error, filename);
+	exit(ec);
 }
 /**
  * print_err - check the code
@@ -22,11 +23,17 @@ void print_error(const char *error, const char *filename, int ec) {
  * Return: Always 0.
  */
 
-void print_err(const char *error, const int fd, int ec) {
-    dprintf(2, error, fd);
-    exit(ec);
+void print_err(const char *error, const int fd, int ec)
+{
+	dprintf(2, error, fd);
+	exit(ec);
 }
-
+/**
+ * cp - check the code
+ * @fileS: file name
+ * @fileD: letter
+ * Return: Always 0.
+ */
 int cp(const char *fileS, char *fileD)
 {
 	int p, q;
@@ -43,7 +50,7 @@ int cp(const char *fileS, char *fileD)
 	mod = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 	q = open(fileD, O_CREAT | O_WRONLY | O_TRUNC, mod);
 	if (q == -1)
-		 print_error("Error: Can't write to %s\n", fileD, 99);
+		print_error("Error: Can't write to %s\n", fileD, 99);
 	while ((bR = read(p, buff, sizeof(buff))) > 0)
 	{
 		bW = write(q, buff, bR);
@@ -66,13 +73,13 @@ int cp(const char *fileS, char *fileD)
  */
 int main(int ac, char **av)
 {
-    int res;
+	int res;
 
-    if (ac != 3)
-    {
-        dprintf(2, "Usage: %s file_from file_to\n", av[0]);
-        exit(98);
-    }
-    res= cp(av[1], av[2]);
-    return (res);
+	if (ac != 3)
+	{
+		dprintf(2, "Usage: %s file_from file_to\n", av[0]);
+		exit(98);
+	}
+	res = cp(av[1], av[2]);
+	return (res);
 }
