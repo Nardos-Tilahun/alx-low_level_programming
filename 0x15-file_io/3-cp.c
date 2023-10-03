@@ -31,28 +31,31 @@ int cp(const char *fileS, char *fileD)
 {
 	int p, q;
 	ssize_t bR, bW;
-	char buff[1024];
+	char *buff;
 	mode_t mod;
 
+	buff = (char *)malloc(sizeof(char) * 1024);
+	if (buff == NULL)
+		print_error("Error: Can't write to %s\n", fileD, 99);
 	p = open(fileS, O_RDONLY);
 	if (p == -1)
-		print_error("Error: can't read the file from %s\n", fileS, 98);
+		print_error("Error: Can't read from file %s\n", fileS, 98);
 	mod = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
-	q = open(fileD, O_CREAT | O_RDWR | O_TRUNC, mod);
+	q = open(fileD, O_CREAT | O_WRONLY | O_TRUNC, mod);
 	if (q == -1)
-		 print_error("Error: can't write to file %s\n", fileD, 99);
-	if ((bR = read(p, buff, sizeof(buff))) > 0)
+		 print_error("Error: Can't write to %s\n", fileD, 99);
+	while ((bR = read(p, buff, sizeof(buff))) > 0)
 	{
 		bW = write(q, buff, bR);
 		if (bW == -1)
-			print_error("Error: can't write to file %s\n", fileD, 99);
+			print_error("Error: Can't write to %s\n", fileD, 99);
 	}
 	if (bR == -1)
-		print_error("Error: can't read the file from %s\n", fileS, 98);
+		print_error("Error: Can't read from file %s\n", fileS, 98);
 	if (close(p) == -1)
-		print_err("Error: can't close fd %d\n", p, 100);
+		print_err("Error: Can't close fd %d\n", p, 100);
 	if (close(q) == -1)
-		print_err("Error: can't close fd %d\n", q, 100);
+		print_err("Error: Can't close fd %d\n", q, 100);
 	return (1);
 }
 /**
