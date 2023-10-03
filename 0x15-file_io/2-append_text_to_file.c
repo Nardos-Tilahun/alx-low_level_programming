@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * appen_text_to_file - check the code
+ * append_text_to_file - check the code
  * @filename: file name
  * @text_content: letter
  * Return: Always 0.
