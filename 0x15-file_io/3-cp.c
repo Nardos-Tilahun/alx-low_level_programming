@@ -1,0 +1,75 @@
+#include "main.h"
+#include <stdlib.h>
+
+/**
+ * print_error - check the code
+ * @error: file name
+ * @fd: letter
+ * @ec: error
+ * Return: Always 0.
+ */
+
+
+void print_error(const char *error, const char *filename, int ec) {
+    dprintf(2, error, filename);
+    exit(ec);
+}
+/**
+ * print_err - check the code
+ * @error: file name
+ * @fd: letter
+ * @ec: error
+ * Return: Always 0.
+ */
+
+void print_err(const char *error, const int fd, int ec) {
+    dprintf(2, error, fd);
+    exit(ec);
+}
+
+int cp(const char *fileS, char *fileD)
+{
+	int p, q;
+	ssize_t bR, bW;
+	char buff[1024];
+	mode_t mod;
+
+	p = open(fileS, O_RDONLY);
+	if (p == -1)
+		print_error("Error: can't read the file from %s\n", fileS, 98);
+	mod = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
+	q = open(fileD, O_CREAT | O_RDWR | O_TRUNC, mod);
+	if (q == -1)
+		 print_error("Error: can't write to file %s\n", fileD, 99);
+	if ((bR = read(p, buff, sizeof(buff))) > 0)
+	{
+		bW = write(q, buff, bR);
+		if (bW == -1)
+			print_error("Error: can't write to file %s\n", fileD, 99);
+	}
+	if (bR == -1)
+		print_error("Error: can't read the file from %s\n", fileS, 98);
+	if (close(p) == -1)
+		print_err("Error: can't close fd %d\n", p, 100);
+	if (close(q) == -1)
+		print_err("Error: can't close fd %d\n", q, 100);
+	return (1);
+}
+/**
+ * main - check the code
+ * @ac: count
+ * @av: vector
+ * Return: Always 0.
+ */
+int main(int ac, char **av)
+{
+    int res;
+
+    if (ac != 3)
+    {
+        dprintf(2, "Usage: %s file_from file_to\n", av[0]);
+        exit(98);
+    }
+    res= cp(av[1], av[2]);
+    return (res);
+}
