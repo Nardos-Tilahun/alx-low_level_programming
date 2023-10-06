@@ -12,7 +12,7 @@
 
 void print_error(const char *error, const char *filename, int ec)
 {
-	dprintf(2, error, filename);
+	dprintf(STDERR_FILENO, error, filename);
 	exit(ec);
 }
 /**
@@ -25,7 +25,7 @@ void print_error(const char *error, const char *filename, int ec)
 
 void print_err(const char *error, const int fd, int ec)
 {
-	dprintf(2, error, fd);
+	dprintf(STDERR_FILENO, error, fd);
 	exit(ec);
 }
 /**
@@ -86,7 +86,7 @@ int main(int ac, char **av)
 
 	if (ac != 3)
 	{
-		dprintf(2, "Usage: %s file_from file_to\n", av[0]);
+		dprintf(STDERR_FILENO, "Usage: %s file_from file_to\n", av[0]);
 		exit(97);
 	}
 	res = cp(av[1], av[2]);
