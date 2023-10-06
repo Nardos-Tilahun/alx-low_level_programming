@@ -51,12 +51,20 @@ int cp(const char *fileS, char *fileD)
 	q = open(fileD, O_CREAT | O_WRONLY | O_TRUNC, mod);
 	if (q == -1)
 		print_error("Error: Can't write to %s\n", fileD, 99);
-	while ((bR = read(p, buff, sizeof(buff))) > 0)
+	while (1)
 	{
+		bR = read(p, buff, sizeof(buff));
+		if (bR == -1)
+			 print_error("Error: Can't read from file %s\n", fileS, 98);
+		if (bR == 0)
+			break;
 		q = open(fileD, O_WRONLY | O_APPEND);
+		if (q == -1)
+			print_error("Error: Can't write to %s\n", fileD, 99);
 		bW = write(q, buff, bR);
 		if (bW == -1)
 			print_error("Error: Can't write to %s\n", fileD, 99);
+		close(q);
 	}
 	if (bR == -1)
 		print_error("Error: Can't read from file %s\n", fileS, 98);
