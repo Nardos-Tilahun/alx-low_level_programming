@@ -53,6 +53,7 @@ int cp(const char *fileS, char *fileD)
 		print_error("Error: Can't write to %s\n", fileD, 99);
 	while ((bR = read(p, buff, sizeof(buff))) > 0)
 	{
+		q = open(fileD, O_WRONLY | O_APPEND);
 		bW = write(q, buff, bR);
 		if (bW == -1)
 			print_error("Error: Can't write to %s\n", fileD, 99);
@@ -78,7 +79,7 @@ int main(int ac, char **av)
 	if (ac != 3)
 	{
 		dprintf(2, "Usage: %s file_from file_to\n", av[0]);
-		exit(98);
+		exit(97);
 	}
 	res = cp(av[1], av[2]);
 	return (res);
