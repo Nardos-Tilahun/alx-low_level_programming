@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * check_elf - ELF file.
+ * check_elf - ELF le.
  * @e_ident: ELF magic numbers.
  *
  * Description: exit code 98.
