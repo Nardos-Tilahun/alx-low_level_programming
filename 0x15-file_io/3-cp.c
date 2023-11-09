@@ -1,94 +1,90 @@
 #include "main.h"
-#include <stdlib.h>
-
+char *create_buffer(char *file);
+void close_file(char fd);
 /**
- * print_error - check the code
- * @error: file name
- * @filename: letter
- * @ec: error
- * Return: Always 0.
+ *create_buffer -at allocates a buffer
+ *@file: to file
+ *Return: buffer
  */
-
-
-void print_error(const char *error, const char *filename, int ec)
+char *create_buffer(char *file)
 {
-	dprintf(STDERR_FILENO, error, filename);
-	exit(ec);
-}
-/**
- * print_err - check the code
- * @error: file name
- * @fd: letter
- * @ec: error
- * Return: Always 0.
- */
+	char *buffer;
 
-void print_err(const char *error, const int fd, int ec)
-{
-	dprintf(STDERR_FILENO, error, fd);
-	exit(ec);
-}
-/**
- * cp - check the code
- * @fileS: file name
- * @fileD: letter
- * Return: Always 0.
- */
-int cp(const char *fileS, char *fileD)
-{
-	int p, q;
-	ssize_t bR, bW;
-	char *buff;
-	mode_t mod;
-
-	buff = (char *)malloc(sizeof(char) * 1024);
-	if (buff == NULL)
-		print_error("Error: Can't write to %s\n", fileD, 99);
-	p = open(fileS, O_RDONLY);
-	if (p == -1)
-		print_error("Error: Can't read from file %s\n", fileS, 98);
-	mod = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
-	q = open(fileD, O_CREAT | O_WRONLY | O_TRUNC, mod);
-	if (q == -1)
-		print_error("Error: Can't write to %s\n", fileD, 99);
-	while (1)
+	buffer = malloc(sizeof(char) * 1024);
+	if (buffer == NULL)
 	{
-		bR = read(p, buff, sizeof(buff));
-		if (bR == -1)
-			print_error("Error: Can't read from file %s\n", fileS, 98);
-		if (bR == 0)
-			break;
-		q = open(fileD, O_WRONLY | O_APPEND);
-		if (q == -1)
-			print_error("Error: Can't write to %s\n", fileD, 99);
-		bW = write(q, buff, bR);
-		if (bW == -1)
-			print_error("Error: Can't write to %s\n", fileD, 99);
-		close(q);
+		dprintf(STDERR_FILENO,
+			"Error: Can't write to %s\n", file);
+		exit(99);
 	}
-	if (bR == -1)
-		print_error("Error: Can't read from file %s\n", fileS, 98);
-	if (close(p) == -1)
-		print_err("Error: Can't close fd %d\n", p, 100);
-	if (close(q) == -1)
-		print_err("Error: Can't close fd %d\n", q, 100);
-	return (1);
+
+	return (buffer);
 }
 /**
- * main - check the code
- * @ac: count
- * @av: vector
- * Return: Always 0.
+ *close_file - funcloses an opened file
+ *@fd: ptor
+ *Return: nothing
  */
-int main(int ac, char **av)
+void close_file(char fd)
 {
-	int res;
+	int c;
 
-	if (ac != 3)
+	c = close(fd);
+
+	if (c < 0)
 	{
-		dprintf(STDERR_FILENO, "Usage: %s file_from file_to\n", av[0]);
+		dprintf(STDERR_FILENO,
+				"Error: Can't close fd %d\n", fd);
+		exit(100);
+	}
+}
+/**
+ *main -  argv[1] to argv[2]
+ *@argc: ount
+ *@argv:  argument vectors
+ *Return: success
+ */
+int main(int argc, char *argv[])
+{
+	int from, to, rd, wr;
+	char *buffer;
+
+	if (argc != 3)
+	{
+		dprintf(STDERR_FILENO,
+				"Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	res = cp(av[1], av[2]);
-	return (res);
+
+	buffer = create_buffer(argv[2]);
+
+	from = open(argv[1], O_RDONLY);
+	rd = read(from, buffer, 1024);
+	to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+
+	do {
+		if (rd == -1 || from == -1)
+		{
+			dprintf(STDERR_FILENO,
+					"Error: Can't read from file %s\n", argv[1]);
+			exit(98);
+		}
+		wr = write(to, buffer, rd);
+
+		if (wr == -1 || to == -1)
+		{
+			dprintf(STDERR_FILENO,
+					"Error: Can't write to %s\n", argv[2]);
+			exit(99);
+		}
+
+		rd = read(from, buffer, 1024);
+		to = open(argv[2], O_WRONLY | O_APPEND);
+	} while (rd > 0);
+
+	free(buffer);
+	close_file(from);
+	close_file(to);
+
+	return (0);
 }
