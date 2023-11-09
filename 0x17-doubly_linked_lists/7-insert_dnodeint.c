@@ -42,10 +42,10 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int i, int n)
 		temp = temp->next;
 	}
 	temp1 = temp->next;
-	add->next = temp->next;
+	add->next = temp1;
 	add->prev = temp;
 	temp->next = add;
 	temp1->prev = temp;
-	return (temp);
+	return (add);
 }
 
